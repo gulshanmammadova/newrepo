@@ -1,0 +1,21 @@
+﻿@using CarModelMarka.Models
+@model List<Model>
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+<ul>
+    @foreach (var item in Model)
+    {
+        <li>
+            Name: @item.ModelName <br>  Marka: @item?.Marka - Cars:
+            <ul>
+                @foreach (var car in item?.Cars)
+                {
+                    <li>Color: @car?.Color - Year: @car?.Year </li>
+                }
+            </ul>
+        </li>
+    }
+</ul>
